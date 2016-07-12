@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- profile: dev -->
+<properties>
+	<!--<property name="log.dir">c://log//</property>  -->
+	<property name="log.dir">/data/Logs/gbapp.cfaoe.local/</property>
+	<property name="pattern-stdout">[%d] [%level] [%thread] %msg%n</property>
+	<property name="pattern">[%d] [%level] [@@ %msg @@] [%C] [%M] - [%thread]%n</property>
+	<property name="roll.dir">${log.dir}\\%d{yyyyMM}\\</property>
+	<property name="roll.suffix">.%d{yyyy-MM-dd}.zip</property>
+</properties>

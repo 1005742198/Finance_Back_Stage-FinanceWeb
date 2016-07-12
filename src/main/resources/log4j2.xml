@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- log4j-api-2.3.jar log4j-core-2.3.jar disruptor-3.3.2.jar-->
+<!-- http://logging.apache.org/log4j/2.x/manual/ -->
+<!-- status:打印状态信息 monitorInterval:扫描周期，单位是秒 -->
+<configuration status="off" monitorInterval="60" xmlns:xi="http://www.w3.org/2001/XInclude">
+	 <xi:include href="log4j2-properties.xml" />
+	<!-- DynamicThresholdFilter key="userid" defaultThreshold="ERROR"
+                          onMatch="ACCEPT" onMismatch="DENY">
+    	<KeyValuePair key="abc" value="debug"/>
+  	</DynamicThresholdFilter> -->
+	<appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<!-- 配置输出格式 -->
+			<PatternLayout>
+				<pattern>${pattern-stdout}</pattern>
+			</PatternLayout>
+		</Console>
+		<RollingRandomAccessFile name="log_file_info"
+			fileName="${log.dir}info.log"  
+            filePattern="${roll.dir}info.log${roll.suffix}">
+			<PatternLayout>
+				<pattern>${pattern}</pattern>
+			</PatternLayout>
+			<Policies>  
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" /> 
+                <!-- SizeBasedTriggeringPolicy size="250 MB"/>  -->
+            </Policies>
+		</RollingRandomAccessFile>
+		<RollingRandomAccessFile name="log_file_error"
+			fileName="${log.dir}error.log"  
+            filePattern="${roll.dir}error.log${roll.suffix}">
+			<PatternLayout>
+				<pattern>${pattern}</pattern>
+			</PatternLayout>
+			<Policies>  
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" /> 
+            </Policies>
+		</RollingRandomAccessFile>
+        <RollingRandomAccessFile name="log_file_restful"
+            fileName="${log.dir}restful.log"  
+            filePattern="${roll.dir}restful.log${roll.suffix}">
+            <PatternLayout>
+                <pattern>${pattern}</pattern>
+            </PatternLayout>
+            <Policies>  
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" /> 
+            </Policies>
+        </RollingRandomAccessFile>
+        <RollingRandomAccessFile name="log_file_access"
+            fileName="${log.dir}access.log"  
+            filePattern="${roll.dir}access.log${roll.suffix}">
+            <PatternLayout>
+                <pattern>${pattern}</pattern>
+            </PatternLayout>
+            <Policies>  
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" /> 
+            </Policies>
+        </RollingRandomAccessFile>
+		<RollingRandomAccessFile name="log_file_biz"
+			fileName="${log.dir}biz.log"
+            filePattern="${roll.dir}biz.log${roll.suffix}">
+			<PatternLayout>
+				<pattern>${pattern}</pattern>
+			</PatternLayout>
+			<Policies>  
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" /> 
+            </Policies>
+		</RollingRandomAccessFile>
+	</appenders>
+	<loggers>
+		<AsyncLogger name="info" level="info" additivity="false">
+			<AppenderRef ref="log_file_info" />
+			<AppenderRef ref="STDOUT" />
+		</AsyncLogger>
+		<AsyncLogger name="error" level="error" additivity="false">
+			<AppenderRef ref="log_file_error" />
+			<AppenderRef ref="STDOUT" />
+		</AsyncLogger>
+        <AsyncLogger name="restful" level="info" additivity="false">
+            <AppenderRef ref="log_file_restful" />
+            <AppenderRef ref="STDOUT" />
+        </AsyncLogger>
+        <AsyncLogger name="access" level="info" additivity="false">
+            <AppenderRef ref="log_file_access" />
+        </AsyncLogger>
+		<AsyncLogger name="biz" level="debug" additivity="false">
+			<AppenderRef ref="log_file_biz" />
+		</AsyncLogger>
+		<asyncRoot level="info">
+			<AppenderRef ref="STDOUT" />
+			<AppenderRef ref="log_file_biz" />
+		</asyncRoot>
+		
+		<!-- for debug -->
+		<AsyncLogger name="com.huajin.guofubank" level="debug" additivity="false">
+			<AppenderRef ref="STDOUT" />
+			<AppenderRef ref="log_file_biz" />
+		</AsyncLogger>
+	</loggers>
+</configuration>
+
