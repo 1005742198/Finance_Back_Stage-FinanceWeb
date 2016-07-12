@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.obob.dao.UserDao">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+    <![CDATA[
+        INSERT INTO user (
+        	Id ,
+        	UserName ,
+        	UserPhone 
+        ) VALUES (
+        	#{id} ,
+        	#{userName} ,
+        	#{userPhone} 
+        )
+    ]]>
+    	<selectKey resultType="java.lang.Integer" keyProperty="id">
+            select LAST_INSERT_ID() as id
+        </selectKey>
+	</insert>
+    
+	<update id="update">
+    <![CDATA[
+        UPDATE user SET
+	        UserName = #{userName} ,
+	        UserPhone = #{userPhone} 
+        WHERE 
+	        Id = #{id} 
+    ]]>
+	</update>
+
+    <delete id="delete" parameterType="java.util.Map">
+    <![CDATA[
+        DELETE FROM user WHERE
+        Id = #{id} 
+    ]]>
+    </delete>
+    
+    <select id="getById" parameterType="java.util.Map" resultType="com.huajin.payadminserver.po.User">
+    <![CDATA[
+    	SELECT *
+	    FROM user 
+        WHERE 
+	        Id = #{id} 
+    ]]>
+	</select>
+	
+	<sql id="where">
+		<where>	      				
+	       <if test="@Ognl@isNotEmpty(id)">
+				AND Id = #{id}
+			</if>
+	       <if test="@Ognl@isNotEmpty(userName)">
+				AND UserName = #{userName}
+			</if>
+	       <if test="@Ognl@isNotEmpty(userPhone)">
+				AND UserPhone = #{userPhone}
+			</if>
+		</where>
+	</sql>
+
+    <select id="select" parameterType="java.util.Map" resultType="com.huajin.payadminserver.po.User">
+    	SELECT *
+	    FROM user 
+		<include refid="where"/>
+		
+		<if test="@Ognl@isNotEmpty(sortColumns)">
+			ORDER BY ${sortColumns}
+		</if>
+    </select>
+</mapper>
+
