@@ -7,7 +7,7 @@ import java.io.Serializable;
  * 
  * @author bo.yang
  */
-public class Response implements Serializable {
+public class BaseResponse implements Serializable {
 
 	private static final long serialVersionUID = -7265114321041173317L;
 	
@@ -18,26 +18,26 @@ public class Response implements Serializable {
 	public int getRetcode() {
 		return retcode;
 	}
-	public Response setRetcode(int retcode) {
+	public BaseResponse setRetcode(int retcode) {
 		this.retcode = retcode;
 		return this;
 	}
 	public String getMsg() {
 		return msg;
 	}
-	public Response setMsg(String msg) {
+	public BaseResponse setMsg(String msg) {
 		this.msg = msg;
 		return this;
 	}
 	public Object getData() {
 		return data;
 	}
-	public Response setData(Object data) {
+	public BaseResponse setData(Object data) {
 		this.data = data;
 		return this;
 	}
 	
-	public static Response build(){
-		return new Response();
+	public static BaseResponse build(){
+		return new BaseResponse();
 	}
 }

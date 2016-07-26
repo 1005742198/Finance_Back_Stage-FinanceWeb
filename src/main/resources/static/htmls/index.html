@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!--jQuery 的主文件-->
+<script type="text/javascript" src="../js/easyui/jquery.min.js"></script>
+
+<!--easyUI 的主文件...-->
+<script type="text/javascript" src="../js/easyui/jquery.easyui.min.js"></script>
+
+<!--easyui 的主样式文件...-->
+<link rel="stylesheet" href="../js/easyui/themes/default/easyui.css">
+
+<!--easyui 的主样式文件...-->
+<link rel="stylesheet" href="../js/easyui/themes/icon.css">
+
+<!--easyui 的树样式文件...-->
+<link rel="stylesheet" href="../js/easyui/demo/demo.css">
+</head>
+<body>
+	
+	<div class="easyui-layout" style="width:99%;margin-right:10px;height:700px;">
+		<div data-options="region:'north'" style="height:50px;width:97%;background-color:#D1EEEE;">
+			<p style="text-align:center;font-family: sans-serif;height:10px;font-size:250%;">财务管理系统</p>
+		</div>
+		<div data-options="region:'south',split:true" style="height:50px;">
+			copy right obob.
+		</div>
+		<!-- <div data-options="region:'east',split:true" title="East" style="width:100px;">
+			
+		</div> -->
+		<div data-options="region:'west',split:true" title="菜单" style="width:16%;">
+			<div style="margin:20px 0;"></div>
+			<div class="easyui-panel" style="padding:5px">
+				<ul id="tt" class="easyui-tree" data-options="
+						url: '../js/easyui/demo/tree/tree_data1.json',
+						method: 'get',
+						animate: true,
+						onContextMenu: function(e,node){
+							e.preventDefault();
+							$(this).tree('select',node.target);
+							$('#mm').menu('show',{
+								left: e.pageX,
+								top: e.pageY
+							});
+						}
+					"></ul>
+			</div>
+			动态参数：${hello}
+			<div id="mm" class="easyui-menu" style="width:15%;">
+			</div>
+		</div>
+		<div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
+			<table class="easyui-datagrid"
+					data-options="url:'datagrid_data1.json',method:'get',border:false,singleSelect:true,fit:true,fitColumns:true">
+				<thead>
+					<tr>
+						<th data-options="field:'itemid'" width="80">Item ID</th>
+						<th data-options="field:'productid'" width="100">Product ID</th>
+						<th data-options="field:'listprice',align:'right'" width="80">List Price</th>
+						<th data-options="field:'unitcost',align:'right'" width="80">Unit Cost</th>
+						<th data-options="field:'attr1'" width="150">Attribute</th>
+						<th data-options="field:'status',align:'center'" width="60">Status</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
