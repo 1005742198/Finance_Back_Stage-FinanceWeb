@@ -32,6 +32,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-devtools')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf:')
 	compile ('org.springframework:spring-context-support:4.2.5.RELEASE')
 	compile ('com.google.code.spring-crypto-utils:spring-crypto-utils:1.4.0')
 	
@@ -43,6 +44,9 @@ dependencies {
 	
 	//apache
 	compile ('org.apache.commons:commons-lang3:3.4')
+	
+	//json
+	compile ('com.alibaba:fastjson:1.2.13')
 	
 	testCompile('org.springframework.boot:spring-boot-starter-test') 
 }

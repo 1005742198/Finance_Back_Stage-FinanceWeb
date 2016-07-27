@@ -67,8 +67,4 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
            <bean class="com.huajin.ats.interceptor.GlobalInterceptor"></bean>    
         </mvc:interceptor>
 	</mvc:interceptors>
-	<dependency>  
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-thymeleaf</artifactId>
-</dependency> 
 </beans>
