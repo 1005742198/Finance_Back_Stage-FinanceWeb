@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+html, body { height:100%; }
+body {overflow:auto;}
+/*登录*/
+.cont_wrap{min-height:100%; margin-bottom:-91px;}
+.cont_box{padding-bottom:91px;}
+.hj_wrap { width:1000px; min-width:1000px; margin:0 auto;}
+.login_header { margin-bottom:20px;}
+.top-nav{position:relative;z-index:100;}/*层级100*/
+.top-nav{background-color:#000;background-color:transparent;background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);color:#fff;font-size:12px;margin-bottom:30px;}
+.top-nav a,.top-nav .bar{color:#fff!important;float:left;height:100%;height:30px;line-height:30px;}
+.top-nav .bar{width:1px;padding:0 15px;}
+.top-nav a:hover{color:#71adff!important;text-decoration:none;}
+.top-nav .hotline{background:url(../img/img.png) no-repeat 0 -77px;padding-left:22px;height:30px;line-height:30px;}
+.login_header .qj_logo {background:url(../img/qj_logo_3.png) no-repeat;display:block;width:166px;height:56px;text-indent:-999em;}
+.login_tit {margin-top:9px; border-left:2px solid #252626; margin-left:10px; padding:0 10px;}
+.login_tit span{float:left;font-size:28px;font-weight:normal;height:40px;line-height:40px;padding:0 15px;color:#fff;background-color:#06b22f;}
+.login_tit .tit_1{background-color:#fa952a;}
+.login_tit .tit_2{background-color:#4e8fea;}
+.login_tit .tit_3{background-color:#562c8f;}
+.login_bg{padding-top:30px; height:458px;background:url(../img/login_bg_00.jpg) no-repeat center;}
+.login_bg1{padding-top:30px; height:458px;background:url(../img/login_bg_01.jpg) no-repeat center;}
+.login_bg2{padding-top:30px; height:458px;background:url(../img/login_bg_02.jpg) no-repeat center;}
+.login_bg3{padding-top:30px; height:458px;background:url(../img/login_bg_03.jpg) no-repeat center;}
+.login_container .login_form{background-color:#fff;border-radius:5px;padding:10px 20px;box-shadow:0 0 10px #cebfb1;}
+.login_container .form-group {margin-bottom: 20px;}
+.login_container .form-group label {font-size: 14px;}
+.login_container .form-group.space {padding-top:20px; border-top:1px solid #ccc; width:344px;}
+.login_container .form-group img { height:32px; vertical-align: top;border:1px solid #ccc; border-radius:5px; width:80px; }
+.login_container .input-nm { width:240px;}
+.login_container .code-inp { width:105px; margin-right:5px;}
+.login_container .forget-psw { margin-right:14px; line-height:22px; }
+.login_container .change-code { margin-left:5px;}
+.login_container .error_tip_row { height:40px;line-height:40px;color:#F00; font-size:14px; margin-left:90px;}
+.hj_footer {text-align: center; font-size: 12px; padding-top:60px; margin-bottom:40px;}
+.pointer { cursor:pointer;}
+.sub-btn { width:240px; margin-left:105px; font-size:16px;}
+.pic { width:500px; height:310px; background:url(../img/pic2.png) no-repeat center; float:left;}
+/*找回密码*/
+.fp-tit { height:40px; line-height:40px; color:#666; font-size:20px; padding-left:15px;}
+.fp-box { padding:40px 50px 22px;  }
+.fp-box ul { margin-bottom:40px;}
+.fp-box ul li { display:inline; float:left; width:300px; text-align:center; height:64px; line-height:64px;  border-bottom:5px solid #ccc; font-size:18px; color:#666; }
+.fp-box ul li.pass {border-bottom:5px solid #337ab7; color:#337ab7; }
+.fp-box .con { padding-left:160px; display:none;padding-bottom:30px;}
+.fp-box .be-sucss {margin-left:80px; width:460px; height:100px; position:relative;}
+.fp-box .be-sucss .fa { position:absolute; left:0; top:10px;color:#1fbc0b;}
+.fp-box .be-sucss p { height:22px; line-height:22px; font-size:14px; color:#666; padding-left:64px;}
+.fp-box .be-sucss .succ-text { height:70px; line-height:70px; font-size:23px;color:#333; }
+.fp-box .succ-btn { font-size:18px; margin-left:40px; padding-top:50px;}
+.fp-box .succ-btn .btn { width:220px; margin-right:60px; font-size:16px;}
+.login-btn { padding-top:30px;}
+/*--底部--*/
+.qj-footer{padding:20px 0 17px;color:#737373;font-size:12px;overflow:hidden;}
+.qj-footer p{line-height:18px;margin:0;}
+.bottom-pic{background:url(../img/bottom_pic.png) no-repeat;width:397px;height:34px;display:inline-block;text-align:center;margin-bottom:17px;}
+.qrcode{width:88px;height:118px;position:absolute;right:40px;bottom:-17px;}
+

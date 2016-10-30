@@ -1,0 +1,156 @@
+@charset "utf-8"; /*注意编码问题*/
+/*-----------------------------------------------------------------css样式重置-----------------------------------------------------------------------*/
+body,div,p,h1,h2,h3,h4,h5,h6,blockquote,dl,dd,ul,ol,pre,form,fieldset,legend,button,input,textarea,table,th,td{margin:0;padding:0;} /*去除默认内外边距*/
+*html{background-image:url(about:blank);background-attachment:fixed;}/*解决ie6闪动问题*/
+body,button,input,select,textarea{font:14px 'Microsoft Yahei';background-color:#fff;color:#666;} /*设置主要字体大小及样式*/
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;} /*让h1-h6自动继承body字体大小、去除h的粗体样*/
+a,a:visited{color:#000; text-decoration:none;} /*设置a字体颜色，访问过后字体颜色、去除默认下划线*/
+a:hover{text-decoration:none;} /*设置a划过时字体颜色、划过的下滑线效*/
+a:focus{outline:none;-moz-outline:none} /*去除a点击后的虚线*/
+address,cite,em,i{font-style:normal;}b,strong{font-weight:normal;} /*恢复正常字体样式*/
+small{font-size:80%;} /*设置small标签的字体大*/
+li{list-style:none;} /*去除li前面的小点或数字*/
+legend{color:#333;}  /*不建议使用，用span标签定位在表的任何位置较*/
+img{border:none 0; vertical-align:top;} /*解决a链接下img的border问题、去掉图片底下的空白*/
+fieldset {border:0;} /*不建议用*/
+table{border-collapse:collapse;border-spacing:0;} /*去除table间隙*/
+button,input,select,textarea{border:none 0;outline:none;} /*去除表单元素默认边框*/
+input::-ms-clear{display:block;}/*去掉ie输入框后面×*/
+input[type="button"],input[type="submit"],input[type="reset"]{cursor:pointer;} /*给按钮添加手型*/
+textarea{resize:vertical;}
+
+/*-----------------------------------------------------------------css公共类-----------------------------------------------------------------------*/
+/**/
+.table{width:100%;max-width:100%;margin-bottom:20px;}
+.table td{border-top:1px solid #ddd;padding:5px;}
+.btn{font-size:22px;height:50px;line-height:50px;width:100%;display:block;text-align:center;white-space:nowrap;vertical-align:middle;border:1px solid transparent;border-radius:3px;font-weight:normal;}
+.btn:hover{text-decoration:none;cursor:pointer;}
+
+/*浮动及清楚浮动*/
+.fl{display:inline; float:left;}
+.fr{display:inline; float:right;}
+.clear:after,.form-row:after,.w1000:after {display:block; content:''; clear:both;}
+.clear,.form-row,.w1000{zoom:1;}
+
+/*边距*/
+.mb{margin-bottom:10px!important;} 
+.mb5{margin-bottom:5px!important;}
+.mb10{margin-bottom:10px!important;}
+.mb20{margin-bottom:20px!important;}
+.mb40{margin-bottom:40px!important;}
+.pd{padding:10px!important;}
+.pd5{padding:5px!important;}
+.pd15{padding:15px!important;}
+.pd20{padding:20px!important;}
+.pb40{padding-bottom:40px!important;}
+.pb20{padding-bottom:20px!important;}
+.pt20{padding-top:20px!important;}
+
+/*字体样式*/
+.fs24{font-size:24px!important;}
+.fs22{font-size:22px!important;}
+.fs20{font-size:20px!important;}
+.fs18{font-size:18px!important;}
+.del{text-decoration:line-through;}
+.bold{font-weight:bold;}
+.italic{font-style:italic;}
+
+/*文本样式*/
+p.indent{text-indent:2em;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+.tl{text-align:left;}
+.lowercase{text-transform:lowercase;}/*小写*/
+.uppercase{text-transform:uppercase;}/*大写*/
+.capitalize{text-transform:capitalize;}/*首字母大写*/
+
+/*颜色*/
+.bg-hover li:hover{}
+.hot{}
+.hot:hover{}
+.link{color:#000;}
+.link:hover{color:#1c2e75;text-decoration:underline;}
+.btn-c{color:#333;background-color:#fff;border-color:#ccc;}
+.btn-c:hover{background-color:#e6e6e6;border-color:#adadad;}
+.btn-m{display:block;color:#fff;background-color:#fd890e;border-color:#fd890e;}
+.btn-m:hover{background-color:#ee7a00;border-color:#ee7a00;}
+.btn.disabled,.btn[disabled]{filter:alpha(opacity=65);opacity:.65;cursor:not-allowed;}
+.btn-c.disabled:hover,.btn-c[disabled]:hover{background-color:#fff;border-color:#ccc;}
+.btn-m.disabled:hover,.btn-m[disabled]:hover{background-color:#337ab7;border-color:#2e6da4;}
+
+/*辅助类*/
+.triangle{display:inline-block;width:0;height:0;line-height:0;border:5px dashed transparent;vertical-align middle;border-top:5px solid #000;}
+.triangle.up{border:5px dashed transparent;border-bottom:5px solid #000;}
+.triangle.left{border:5px dashed transparent;border-right:5px solid #000;}
+.triangle.right{border:5px dashed transparent;border-left:5px solid #000;}
+.omit{overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.close{vertical-align:middle;text-align:center;display:inline-block;width:30px;height:30px;border-radius:50%;line-height:.9;font-size:28px;color:#000;text-shadow:0 1px 0 #fff;filter:alpha(opacity=20);opacity: .2;cursor:pointer;}
+.show{display:block!important;}
+.hide{display:none!important;}
+.visible{visibility:visible!important;}
+.invisible{visibility:hidden!important;}
+.fixed-top{position:fixed;top:0;left:0;} 
+.fixed-bottom{position:fixed;bottom:0;left:0;}
+.pointer{cursor:pointer;}
+.for-ie{behavior:url(..js/ie8/PIE.htc);position:relative;}
+
+/*layout布局*/
+.block-center{display:block; margin-left:auto; margin-right:auto;}
+.w1080{width:1080px;min-width:1080px;margin:0 auto;}
+.left-wrap,.right-wrap{background:#fff;padding:0 20px;}
+.left-wrap{width:235px;}
+.right-wrap{width:745px;min-height:500px;}
+
+/*背景小图片*/
+.bg-icon,.dynamics-list li,.qj-carsousel-btn li,.aboutNav-list li,.aboutNav-list li i{background:url(../img/img.png) no-repeat;_background-image:url(../img/_img.png);}
+
+/*-----------------------------------------------------------------css公共布局-----------------------------------------------------------------------*/
+.qj-logo{background:url(../img/qj_logo_3.png) no-repeat;_background-image:url(../img/_qj_logo_3.png);/*修改logo*/display:block;width:290px;height:69px;text-indent:-999em;}
+/*--头部--*/
+.qj-header{position:relative;height:152px;}
+.header-cont,.top-nav{position:relative;z-index:100;}/*层级100*/
+.top-nav{height:30px;line-height:30px;background-color:#000;background-color:transparent;background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);color:#fff;font-size:12px;}
+.top-nav a,.top-nav .bar{color:#fff!important;float:left;}
+.top-nav .bar{width:1px;padding:0 15px;}
+.top-nav a:hover{color:#71adff!important;}
+.top-nav .hotline{background-position:0 -77px;padding-left:22px;}
+.header-cont{padding-top:30px;}
+.qj-nav {position:relative;height:30px;line-height:30px;padding:14px 20px;z-index:100;border-radius:29px;_width:627px;}/*层级100*/
+.qj-nav ul{z-index:102;position:relative;float:right;}/*层级102*/
+.qj-nav li{display:inline;float:left;margin-right:5px;}
+.qj-nav a {color:#fff!important;border-radius:15px;padding:0 16px;float:left;display:block;}
+.qj-nav a.active,.qj-nav a:hover{background-color:#000;background-color:rgba(0,0,0,0.5);_background-color:transparent;_filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);}
+.qj-nav .nav-bg{background-color:#000;opacity:0;filter:alpha(opacity:0);height:100%;width:100%;position:absolute;left:0;top:0;z-index:101;border-radius:29px;}/*层级101*/
+.qj-nav:hover .nav-bg{opacity:0.15;filter:alpha(opacity:15);}
+.qj-header .banner{height:152px;background:url(../img/banner_3.jpg) no-repeat center;position:absolute; width:100%;min-width:1000px;z-index:90;top:0;left:0;}/*层级90*/
+/*--主体--*/
+.hj-tabCont{display:none;}
+/*中心动态*/
+.dynamics-list{background:#fff;overflow:hidden;}
+.dynamics-list li{overflow:hidden;line-height:31px;background-position:0 -107px;padding-left:12px;}
+.dynamics-list a{font-size:16px;}
+.dynamics-list .time{color:#808080;font-size:12px;}
+/*错误*/
+.qj-error{ background:#fff;padding-top:114px;height:250px;text-align: center;}
+.qj-error span{display:inline-block;background:url(../img/error_icon.png) no-repeat;padding-left:90px;height:72px;line-height:72px;font-size:24px;color:#333;}
+.qj-error p{height:56px;line-height:56px;margin-left:90px;font-size:16px;}
+.qj-error .num{color:#bf1635;}
+/*--底部--*/
+.qj-footer{/*height:103px;*/padding:20px 0 17px;background:#dbdbdb;color:#737373;font-size:12px;overflow:hidden;}
+.qj-footer p{line-height:18px;}
+.bottom-pic{background:url(../img/bottom_pic.png) no-repeat;_background-image:url(../img/_bottom_pic.png);width:397px;height:34px;display:inline-block;text-align:center;margin-bottom:17px;}
+.qrcode{width:88px;height:118px;position:absolute;right:40px;bottom:-17px;}
+
+/*分页*/
+.pages {float: right;margin: 20px 0;}
+.pages #Pagination {float: left;overflow: hidden;}
+.pages #Pagination .pagination {height:24px;text-align:right;}
+.pages #Pagination .pagination a,.pages #Pagination .pagination span {float: left;display: inline;border: 1px solid #71adff;background: #fff;color: #71adff;font-size:12px;cursor: pointer;margin:0 10px;height:22px;line-height:22px;width:24px;text-align:center;border-radius:3px;}
+.pages #Pagination .pagination .current,#Pagination .pagination a:hover {background: #71adff;color: #fff;}
+.pages #Pagination .pagination .disabled,
+.pages #Pagination .pagination .disabled:hover{background: #ccc;color: #fff; border-color:#ccc;}
+.pages #Pagination .pagination .prev,
+.pages #Pagination .pagination .next,
+.pages #Pagination .pagination .first,
+.pages #Pagination .pagination .last{float: left;padding:0 8px;width:auto;}
+.pages #Pagination .pagination .pagination-break {border: none;background: none;cursor: default;}
